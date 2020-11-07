@@ -1,4 +1,4 @@
-# Telegram Bot Isabella Happyness telegram-bot
+# Isabella Happyness telegram-bot
 
 ## help
 ```
