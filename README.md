@@ -1,41 +1,12 @@
-# Telegram Bot exceldb-telegram-bot
-[![Build Status](https://travis-ci.org/cedricwalter/exceldb-telegram-bot.svg?branch=master)](https://travis-ci.org/cedricwalter/exceldb-telegram-bot)
-
-Telegram bot you can ask if something is existing in an excel database, you can also add stuff in excel.
-
-# Features
-* Can check in an excel for some value and return all lines matching
-* Can append a new line in an Excel
-* Can return all unique values of any column
-
-## limitations
-Code is not fully generic yet, but i am working towards it
-
+# Telegram Bot Isabella Happyness telegram-bot
 
 ## help
-
-ask the bot for help with /help
 ```
 Help
 These are the registered commands for this Bot:
 
 /help
 Get all the commands this bot provides
-
-/getsubcat
-get all startup sub-categories
-
-/getcat
-get all startup categories
-
-/addentry
-Add entry new startup to database
-
-/hello
-Say hallo to this bot
-
-/hasentry
-Check if database contains company name or company url already, if found returns it
 ```
 
 # Installation
@@ -68,7 +39,7 @@ excel=full path to excel file
 
 Execute maven package and run like this 
 ```
-java -jar exceldb-telegram-bot-1.0-SNAPSHOT-jar-with-dependencies.jar
+java -jar isabella-1.0-SNAPSHOT-jar-with-dependencies.jar
 ```
 
 # Resources
