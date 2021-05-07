@@ -43,16 +43,20 @@ public class MoodCommands extends WhiteListedUserBotCommand {
                     byte[] bytes = (formattedDate + "," + entry + "\n").getBytes();
 
                     Files.write(Paths.get("./mood.txt"), bytes, StandardOpenOption.APPEND);
-                    Integer integer = Integer.valueOf(entry);
-                    if (integer <= 5) {
-                        sendMessage(chat, "Don’t Stop Me Now by Queen is officially the world’s happiest song, according to science\n" +
-                                "A study by the University of Missouri has proven that Queen’s 1978 hit is the track guaranteed to bring unadulterated joy to all.\nHope you'll enjoy it!");
-                        sendMessage(chat, "https://www.youtube.com/watch?v=HgzGwKwLmgM");
+
+                    if (isInteger(entry)) {
+                        Integer integer = Integer.valueOf(entry);
+
+                        if (integer <= 5) {
+                            sendMessage(chat, "Don’t Stop Me Now by Queen is officially the world’s happiest song, according to science\n" +
+                                    "A study by the University of Missouri has proven that Queen’s 1978 hit is the track guaranteed to bring unadulterated joy to all.\nHope you'll enjoy it!");
+                            sendMessage(chat, "https://www.youtube.com/watch?v=HgzGwKwLmgM");
+                        } else {
+                            sendQuote(chat);
+                        }
+
                     } else {
-                        Random random = new Random();
-                        int i = random.nextInt(quoteArray.length);
-                        sendMessage(chat, quoteArray[i]);
-                        sendMessage(chat, authorArray[i]);
+                        sendQuote(chat);
                     }
                     sendMessage(chat, "Thanks you Ella, have a nice day " + Emoji.HEAVY_BLACK_HEART);
 
@@ -66,6 +70,24 @@ public class MoodCommands extends WhiteListedUserBotCommand {
         } catch (TelegramApiException e) {
             BotLogger.error(LOGTAG, e);
         }
+    }
+
+    private void sendQuote(Chat chat) throws TelegramApiException {
+        Random random = new Random();
+        int i = random.nextInt(quoteArray.length);
+        sendMessage(chat, quoteArray[i]);
+        sendMessage(chat, authorArray[i]);
+    }
+
+    private boolean isInteger(String entry) {
+        try {
+
+
+            return true;
+        } catch (Exception e) {
+        }
+
+        return false;
     }
 
 }
